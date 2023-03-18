@@ -1,0 +1,129 @@
+:root {
+  --strong-cyan: hsl(172, 67%, 45%);
+  --very-dark-cyan: hsl(183, 100%, 15%);
+  --dark-grayish-cyan: hsl(186, 14%, 43%);
+  --grayish-cyan: hsl(184, 14%, 56%);
+  --light-grayish-cyan: hsl(185, 41%, 84%);
+  --very-light-grayish-cyan: hsl(189, 41%, 97%);
+  --white: white;
+}
+@font-face {
+  font-family: "SpaceMono";
+  src: local("SpaceMono"), url(./fonts/SpaceMono-Regular.ttf) format("truetype");
+}
+* {
+  font-size: 24px;
+  font-family: "SpaceMono", serif;
+}
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+body,
+html {
+  background-color: var(--light-grayish-cyan);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+.title {
+  letter-spacing: 5px;
+  color: var(--very-dark-cyan);
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.main {
+  background-color: var(--white);
+  border-radius: 15px;
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  padding: 30px;
+  gap: 30px;
+}
+.calculate {
+  width: 350px;
+}
+.result {
+  width: 350px;
+  background-color: var(--very-dark-cyan);
+  border-radius: 15px;
+  padding: 15px;
+}
+.bill > label {
+  font-size: 14px;
+  font-weight: bold;
+}
+.bill-input {
+  padding: 5px;
+  border-radius: 5px;
+}
+.bill-input,
+.bill-input > input {
+  background-color: var(--very-light-grayish-cyan);
+}
+.bill-input > input {
+  outline: none;
+  border: none;
+  text-align: right;
+  font-weight: bold;
+  color: var(--very-dark-cyan);
+}
+.bill-input > img {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.select-tip > label {
+  font-size: 14px;
+  font-weight: bold;
+}
+.select-tip-grid {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+.select-tip-grid > button {
+  background-color: var(--very-dark-cyan);
+  color: white;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.select-tip-grid > button:hover {
+  background-color: var(--strong-cyan);
+  color: var(--very-dark-cyan);
+}
+.number-of-people > label {
+  font-size: 14px;
+  font-weight: bold;
+}
+.number-of-people-input {
+  padding: 5px;
+  border-radius: 5px;
+}
+.number-of-people-input,
+.number-of-people-input > input {
+  background-color: var(--very-light-grayish-cyan);
+}
+.number-of-people-input > input {
+  outline: none;
+  border: none;
+  text-align: right;
+  font-weight: bold;
+  color: var(--very-dark-cyan);
+}
+.number-of-people-input > img {
+  padding-left: 5px;
+  padding-right: 5px;
+}
