@@ -57,15 +57,95 @@ html {
   width: 350px;
   background-color: var(--very-dark-cyan);
   border-radius: 15px;
-  padding: 15px;
+  padding: 25px;
+  position: relative;
+}
+.tip-amount {
+  width: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.tip-amount > div {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.tip-amount > div > label:nth-child(1) {
+  display: block;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+}
+.tip-amount > div > label:nth-child(2) {
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+  color: var(--dark-grayish-cyan);
+}
+.tip-amount > label {
+  font-size: 34px;
+  font-weight: bold;
+  color: var(--strong-cyan);
+}
+.total {
+  width: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.total > div {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.total > div > label:nth-child(1) {
+  display: block;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+}
+.total > div > label:nth-child(2) {
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+  color: var(--dark-grayish-cyan);
+}
+.total > label {
+  font-size: 34px;
+  font-weight: bold;
+  color: var(--strong-cyan);
 }
 .bill > label {
   font-size: 14px;
   font-weight: bold;
 }
-.bill-input {
+.res .bill-input {
   padding: 5px;
   border-radius: 5px;
+}
+.result-button {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  width: inherit;
+  background-color: var(--strong-cyan);
+  color: var(--very-dark-cyan);
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 25px;
+}
+.result-button:hover {
+  background-color: var(--light-grayish-cyan);
+}
+.bill-input {
+  border-radius: 5px;
+  border: solid 2px transparent;
 }
 .bill-input,
 .bill-input > input {
@@ -79,8 +159,11 @@ html {
   color: var(--very-dark-cyan);
 }
 .bill-input > img {
-  padding-left: 5px;
-  padding-right: 5px;
+  padding-left: 15px;
+}
+.bill-input-outline {
+  border-radius: 5px;
+  border: solid 2px var(--strong-cyan);
 }
 .select-tip > label {
   font-size: 14px;
@@ -104,6 +187,7 @@ html {
   background-color: var(--strong-cyan);
   color: var(--very-dark-cyan);
 }
+
 .number-of-people > label {
   font-size: 14px;
   font-weight: bold;
@@ -111,6 +195,7 @@ html {
 .number-of-people-input {
   padding: 5px;
   border-radius: 5px;
+  border: solid 2px transparent;
 }
 .number-of-people-input,
 .number-of-people-input > input {
@@ -124,6 +209,9 @@ html {
   color: var(--very-dark-cyan);
 }
 .number-of-people-input > img {
-  padding-left: 5px;
-  padding-right: 5px;
+  padding-left: 15px;
+}
+.number-of-people-input-outline {
+  border-radius: 5px;
+  border: solid 2px orange;
 }

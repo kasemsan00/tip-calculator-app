@@ -11,7 +11,7 @@ The designs were created to the following widths:
 
 ### Primary
 
-- Strong cyan: hsl(172, 67%, 45%)
+- Strong cyan: hsl(172, 67%, 45%d
 
 ### Neutral
 
