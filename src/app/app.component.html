@@ -3,48 +3,6 @@
   <label>TTER</label>
 </div>
 <div class="main">
-  <div class="calculate">
-    <div class="bill">
-      <label>Bill</label>
-      <div #billInput class="bill-input">
-        <img src="assets/images/icon-dollar.svg" alt="dollar" />
-        <input type="text" (focus)="handleBillFocus()" (blur)="handleBillBlur()" />
-      </div>
-    </div>
-    <div class="select-tip">
-      <label>Select Tip %</label>
-      <div class="select-tip-grid">
-        <button>5%</button>
-        <button>10%</button>
-        <button>15%</button>
-        <button>25%</button>
-        <button>50%</button>
-        <button>Custom</button>
-      </div>
-    </div>
-    <div class="number-of-people">
-      <label>Number of People</label>
-      <div #numberOfPeopleInput class="number-of-people-input">
-        <img src="assets/images/icon-person.svg" alt="person" />
-        <input type="text" (focus)="handleNumberPeopleFocus()" (blur)="handleNumberPeopleBlur()" />
-      </div>
-    </div>
-  </div>
-  <div class="result">
-    <div class="tip-amount">
-      <div>
-        <label>Tip Amount</label>
-        <label>/ person</label>
-      </div>
-      <label>$0.00</label>
-    </div>
-    <div class="total">
-      <div>
-        <label>Total</label>
-        <label>/ person</label>
-      </div>
-      <label>$0.00</label>
-    </div>
-    <button class="result-button">RESET</button>
-  </div>
+  <app-calculate [billInput]="billInput" [numberOfPeopleInput]="numberOfPeopleInput" [tipInput]="tipInput" />
+  <app-result />
 </div>

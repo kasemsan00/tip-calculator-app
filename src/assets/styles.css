@@ -30,6 +30,14 @@ html {
   justify-content: center;
   align-items: center;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input::placeholder {
+  color: var(--grayish-cyan);
+}
 .title {
   letter-spacing: 5px;
   color: var(--very-dark-cyan);
@@ -52,9 +60,13 @@ html {
 }
 .calculate {
   width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .result {
   width: 350px;
+  height: 250px;
   background-color: var(--very-dark-cyan);
   border-radius: 15px;
   padding: 25px;
@@ -157,6 +169,7 @@ html {
   text-align: right;
   font-weight: bold;
   color: var(--very-dark-cyan);
+  -webkit-appearance: none;
 }
 .bill-input > img {
   padding-left: 15px;
@@ -171,7 +184,7 @@ html {
 }
 .select-tip-grid {
   display: grid;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 40px 40px;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 10px;
 }
@@ -187,13 +200,23 @@ html {
   background-color: var(--strong-cyan);
   color: var(--very-dark-cyan);
 }
-
+.select-tip-grid > input {
+  width: 100px;
+  outline: none;
+  border: transparent 2px solid;
+  border-radius: 5px;
+  color: var(--very-dark-cyan);
+  text-align: right;
+  font-weight: bold;
+}
+.select-tip-grid > input:focus {
+  border: var(--strong-cyan) 2px solid;
+}
 .number-of-people > label {
   font-size: 14px;
   font-weight: bold;
 }
 .number-of-people-input {
-  padding: 5px;
   border-radius: 5px;
   border: solid 2px transparent;
 }
@@ -214,4 +237,7 @@ html {
 .number-of-people-input-outline {
   border-radius: 5px;
   border: solid 2px orange;
+}
+.tip-active {
+  background-color: var(--strong-cyan) !important;
 }

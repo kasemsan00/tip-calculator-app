@@ -1,0 +1,35 @@
+<div class="calculate">
+  <div class="bill">
+    <label>Bill</label>
+    <div #billInputDiv class="bill-input">
+      <img src="assets/images/icon-dollar.svg" alt="dollar" />
+      <input (blur)="handleBillBlur()" (focus)="handleBillFocus()" ngModel="{{ billInput }}" type="number" placeholder="0" />
+    </div>
+  </div>
+  <div class="select-tip">
+    <label>Select Tip %</label>
+    <div class="select-tip-grid">
+      <button *ngFor="let tip of tipGroup" #cmp (click)="handleClickTip(tip)" [value]="tip">{{ tip }}%</button>
+      <ng-container *ngIf="!isCustom">
+        <button (click)="handleClickTipCustom()">Custom</button>
+      </ng-container>
+      <ng-container *ngIf="isCustom">
+        <input #tipCustomInput type="text" />
+      </ng-container>
+    </div>
+  </div>
+  <div class="number-of-people">
+    <label>Number of People</label>
+    <div #numberOfPeopleDiv class="number-of-people-input">
+      <img src="assets/images/icon-person.svg" alt="person" />
+      <input
+        (blur)="handleNumberPeopleBlur()"
+        (focus)="handleNumberPeopleFocus()"
+        (ngModelChange)="handleModelNumberOfPeopleChange($event)"
+        ngModel="{{ numberOfPeopleInput }}"
+        type="number"
+        placeholder="0"
+      />
+    </div>
+  </div>
+</div>
