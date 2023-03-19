@@ -22,7 +22,9 @@ export class CalculateComponent {
     // @ts-ignore
     console.log(changes);
   }
-
+  handleClickTest = () => {
+    console.log("Hello World");
+  };
   handleBillFocus = () => {
     this.billInputEle?.nativeElement.classList.add("bill-input-outline");
   };
