@@ -19,8 +19,8 @@ export class CalculateComponent {
   tipGroup = [5, 10, 15, 25, 50];
 
   ngOnChanges(changes: SimpleChanges) {
-    // @ts-ignore
-    console.log(changes);
+    console.log(this.billInput);
+    console.log(this.tipInput);
   }
   handleClickTest = () => {
     console.log("Hello World");
