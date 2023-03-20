@@ -17,14 +17,16 @@ export class CalculateComponent {
   @Input() tipInput: number | undefined;
   isCustom = false;
   tipGroup = [5, 10, 15, 25, 50];
+  constructor() {}
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log(this.billInput);
-    console.log(this.tipInput);
+    console.log(changes);
   }
-  handleClickTest = () => {
-    console.log("Hello World");
+
+  handleBillChange = (event: any) => {
+    this.billInput = event.target.value;
   };
+
   handleBillFocus = () => {
     this.billInputEle?.nativeElement.classList.add("bill-input-outline");
   };
