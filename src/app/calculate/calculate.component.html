@@ -3,9 +3,17 @@
     <label>Bill</label>
     <div #billInputDiv class="bill-input">
       <img src="assets/images/icon-dollar.svg" alt="dollar" />
-      <input (blur)="handleBillBlur()" (focus)="handleBillFocus()" ngModel="{{ billInput }}" type="number" placeholder="0" />
+      <input
+        (blur)="handleBillBlur()"
+        (focus)="handleBillFocus()"
+        ngModel="{{ billInput }}"
+        (ngModelChange)="handleBillChange($event)"
+        type="number"
+        placeholder="0"
+      />
     </div>
   </div>
+  {{ billInput }}
   <div class="select-tip">
     <label>Select Tip %</label>
     <div class="select-tip-grid">
