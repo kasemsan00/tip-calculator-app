@@ -4,16 +4,15 @@
     <div #billInputDiv class="bill-input">
       <img src="assets/images/icon-dollar.svg" alt="dollar" />
       <input
-        (blur)="handleBillBlur()"
-        (focus)="handleBillFocus()"
-        ngModel="{{ billInput }}"
         (ngModelChange)="handleBillChange($event)"
+        (focus)="handleBillFocus()"
+        (blur)="handleBillBlur()"
+        [(ngModel)]="billInput"
         type="number"
         placeholder="0"
       />
     </div>
   </div>
-  {{ billInput }}
   <div class="select-tip">
     <label>Select Tip %</label>
     <div class="select-tip-grid">
@@ -22,7 +21,7 @@
         <button (click)="handleClickTipCustom()">Custom</button>
       </ng-container>
       <ng-container *ngIf="isCustom">
-        <input #tipCustomInput type="text" />
+        <input #tipCustomInput [(ngModel)]="tipInput" (ngModelChange)="handleTipCustomChange($event)" type="text" />
       </ng-container>
     </div>
   </div>

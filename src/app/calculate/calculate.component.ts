@@ -1,25 +1,23 @@
-import { Component, ElementRef, Input, OnChanges, OnInit, QueryList, SimpleChanges, ViewChild, ViewChildren } from "@angular/core";
+import { Component, ElementRef, EventEmitter, Input, Output, QueryList, ViewChild, ViewChildren } from "@angular/core";
 
 @Component({
   selector: "app-calculate",
-  template: ` <a (click)="changeFromChild()">Change from child</a>
-    <br />
-    {{ parentData }}`,
+  templateUrl: "./calculate.component.html",
   styleUrls: ["./calculate.component.css"],
 })
-export class CalculateComponent implements OnChanges, OnInit {
+export class CalculateComponent {
   @ViewChild("billInputDiv") billInputEle: ElementRef<HTMLDivElement> | undefined;
   @ViewChild("numberOfPeopleDiv") numberOfPeopleInputEle: ElementRef<HTMLDivElement> | undefined;
-
-  @ViewChild("tipCustomInput") public tipCustomInput: ElementRef<HTMLInputElement> | undefined;
+  @ViewChild("tipCustomInput") tipCustomInput: ElementRef<HTMLInputElement> | undefined;
 
   @ViewChildren("cmp") buttons: QueryList<HTMLDivElement> | undefined;
-  @Input() billInput: number | undefined;
-  @Input() numberOfPeopleInput: number | undefined;
-  @Input() tipInput: number | undefined;
-  @Input() loggedIn: boolean = false;
+  billInput: number | undefined;
+  tipInput: number | undefined;
+  numberOfPeopleInput: number | undefined;
 
-  @Input() parentData: any;
+  @Output() billChange: EventEmitter<any> = new EventEmitter<any>();
+  @Output() tipChange: EventEmitter<any> = new EventEmitter<any>();
+  @Output() numberOfPeopleChange: EventEmitter<any> = new EventEmitter<any>();
 
   isCustom = false;
   tipGroup = [5, 10, 15, 25, 50];
@@ -30,8 +28,8 @@ export class CalculateComponent implements OnChanges, OnInit {
   handleBillBlur = () => {
     this.billInputEle?.nativeElement.classList.remove("bill-input-outline");
   };
-  handleBillChange = (event: number) => {
-    this.billInput = event;
+  handleBillChange = (value: number) => {
+    this.billChange.emit(value);
   };
   handleNumberPeopleFocus = () => {
     this.numberOfPeopleInputEle?.nativeElement.classList.add("number-of-people-input-outline");
@@ -40,16 +38,11 @@ export class CalculateComponent implements OnChanges, OnInit {
     this.numberOfPeopleInputEle?.nativeElement.classList.remove("number-of-people-input-outline");
   };
   handleModelNumberOfPeopleChange = (event: number | undefined) => {
-    this.numberOfPeopleInput = event;
+    this.numberOfPeopleChange.emit(event);
   };
 
-  changeFromChild() {
-    console.log("change from child");
-    this.parentData -= 1;
-  }
-
   handleClickTip = (value: number) => {
-    this.loggedIn = true;
+    this.tipChange.emit(value);
     this.buttons?.map((item) => {
       const buttonValue = (item as unknown as ElementRef).nativeElement.value;
       if (parseInt(buttonValue) === value) {
@@ -67,12 +60,7 @@ export class CalculateComponent implements OnChanges, OnInit {
     });
     this.tipCustomInput?.nativeElement.focus();
   };
-
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log(changes);
-  }
-
-  ngOnInit(): void {
-    console.log("ng on init");
-  }
+  handleTipCustomChange = (event: any) => {
+    this.tipChange.emit(event);
+  };
 }
