@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component, EventEmitter, Input, Output } from "@angular/core";
 
 @Component({
   selector: "app-result",
@@ -6,10 +6,10 @@ import { Component, Input } from "@angular/core";
   styleUrls: ["./result.component.css"],
 })
 export class ResultComponent {
-  @Input() billInput: number | undefined;
-
+  @Input() resultTipAmount: number | undefined;
+  @Input() resultTotal: number | undefined;
+  @Output() resetEmit: EventEmitter<any> = new EventEmitter<any>();
   handleReset() {
-    this.billInput = 0;
-    console.log("HandleReset");
+    this.resetEmit.emit();
   }
 }
