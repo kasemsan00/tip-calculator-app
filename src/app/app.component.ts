@@ -9,9 +9,9 @@ export class AppComponent {
   title = "tip-calculator-app";
   resultTipAmount: number | undefined = 0;
   resultTotal: number | undefined = 0;
-  @Output() billInput: number | undefined;
-  @Output() tipInput: number | undefined;
-  @Output() numberOfPeopleInput: number | undefined;
+  billInput: number | undefined;
+  tipInput: number | undefined;
+  numberOfPeopleInput: number | undefined;
 
   billChange = (event: number | undefined) => {
     this.billInput = event;
