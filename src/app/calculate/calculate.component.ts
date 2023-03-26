@@ -11,10 +11,9 @@ export class CalculateComponent {
   @ViewChild("tipCustomInput") tipCustomInput: ElementRef<HTMLInputElement> | undefined;
 
   @ViewChildren("cmp") buttons: QueryList<HTMLDivElement> | undefined;
-  billInput: number | undefined;
-  tipInput: number | undefined;
-  numberOfPeopleInput: number | undefined;
-
+  @Input() billInput: number | undefined;
+  @Input() tipInput: number | undefined;
+  @Input() numberOfPeopleInput: number | undefined;
   @Output() billChange: EventEmitter<any> = new EventEmitter<any>();
   @Output() tipChange: EventEmitter<any> = new EventEmitter<any>();
   @Output() numberOfPeopleChange: EventEmitter<any> = new EventEmitter<any>();

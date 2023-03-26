@@ -8,8 +8,8 @@ import { Component, EventEmitter, Input, Output } from "@angular/core";
 export class ResultComponent {
   @Input() resultTipAmount: number | undefined;
   @Input() resultTotal: number | undefined;
-  @Output() resetEmit: EventEmitter<any> = new EventEmitter<any>();
+  @Output() clearData: EventEmitter<any> = new EventEmitter<any>();
   handleReset() {
-    this.resetEmit.emit();
+    this.clearData.emit();
   }
 }

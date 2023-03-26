@@ -33,7 +33,7 @@
         (blur)="handleNumberPeopleBlur()"
         (focus)="handleNumberPeopleFocus()"
         (ngModelChange)="handleModelNumberOfPeopleChange($event)"
-        ngModel="{{ numberOfPeopleInput }}"
+        [(ngModel)]="numberOfPeopleInput"
         type="number"
         placeholder="0"
       />
