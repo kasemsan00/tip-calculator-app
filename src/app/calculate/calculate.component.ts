@@ -21,6 +21,7 @@ export class CalculateComponent {
 
   isCustom = false;
   tipGroup = [5, 10, 15, 25, 50];
+  constructor() {}
 
   handleBillFocus = () => {
     this.billInputEle?.nativeElement.classList.add("bill-input-outline");
