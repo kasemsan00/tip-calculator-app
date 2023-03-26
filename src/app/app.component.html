@@ -3,6 +3,13 @@
   <label>TTER</label>
 </div>
 <div class="main">
-  <app-calculate (billChange)="billChange($event)" (tipChange)="tipChange($event)" (numberOfPeopleChange)="numberOfPeopleChange($event)" />
-  <app-result (resetEmit)="resetAll()" [resultTipAmount]="resultTipAmount" [resultTotal]="resultTotal" />
+  <app-calculate
+    [billInput]="billInput"
+    [tipInput]="tipInput"
+    [numberOfPeopleInput]="numberOfPeopleInput"
+    (billChange)="billChange($event)"
+    (tipChange)="tipChange($event)"
+    (numberOfPeopleChange)="numberOfPeopleChange($event)"
+  />
+  <app-result (clearData)="clearData()" [resultTipAmount]="resultTipAmount" [resultTotal]="resultTotal" />
 </div>

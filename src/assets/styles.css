@@ -30,6 +30,9 @@ html {
   justify-content: center;
   align-items: center;
 }
+input {
+  background-color: var(--very-light-grayish-cyan);
+}
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -240,4 +243,39 @@ input::placeholder {
 }
 .tip-active {
   background-color: var(--strong-cyan) !important;
+}
+
+@media only screen and (max-width: 850px) {
+  .main {
+    flex-direction: column;
+  }
+  .calculate {
+    width: 100%;
+  }
+  .result {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: space-between;
+  }
+  .result-button {
+    margin-bottom: 0;
+    position: relative;
+    bottom: 0;
+  }
+  .bill-input {
+    width: 100%;
+  }
+  .bill-input > input {
+    margin-right: 0;
+    width: calc(100% - 50px);
+  }
+  .number-of-people-input {
+    width: 100%;
+  }
+  .number-of-people-input > input {
+    margin-right: 0;
+    width: calc(100% - 50px);
+  }
 }
